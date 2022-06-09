@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 homework</title>
+    <script src="basic.js"></script>
+</head>
+<body>
+	<h1>Hello World!<h1>
+
+    <table>
+        <caption></caption>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Meal 1</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Meal 2</td>
+                <td>9.00€</td>
+            </tr>
+            <tr>
+                <td>Meal 3</td>
+                <td>5.67€</td>
+            </tr>
+            <tr>
+                <td>Meal 4</td>
+                <td>90.00€</td>
+            </tr>
+            <tr>
+                <td>Meal 5</td>
+                <td>4.89€</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <textarea id="list_input" type="text"></textarea>
+    <button onclick="addlistElement()">Add-comment</button>
+
+    <ul id="data_list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <button onclick="removeAll()">Remove All</button>
+
+    <script>
+        function addlistElement() {
+            var listInput = document.getElementById("list_input").value,
+            listNode = document.getElementById("data_list"),
+            liNode = document.createElement("LI"),
+            txtNode = document.createTextNode(listInput);
+
+            liNode.appendChild(txtNode);
+            listNode.appendChild(liNode);
+        }
+
+        function removeAll() {
+            if (confirm("Do you want to delete all list items?") == true) {
+                document.getElementById("data_list").innerHTML = "";
+                text = "All list items deleted";
+            }
+            text = "List items were not deleted";
+        }
+    </script>
+</body>
+</html>
